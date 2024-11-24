@@ -1,0 +1,15 @@
+.food {
+    font-size: 4vw;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0 5%;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+@media (min-width: 800px) {
+    .food {
+        font-size: 32px;
+    }
+} 

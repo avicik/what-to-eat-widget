@@ -1,0 +1,179 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffffff;
+    font-family: 'Noto Serif SC', 'SimSun', 'STSong', serif;
+}
+
+.card-container {
+    position: relative;
+    width: 80%;
+    max-width: 400px;
+    height: 200px;
+    margin: 20vh auto;
+    perspective: 1000px;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px 15px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.4s;
+    user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE/Edge */
+}
+
+.card.flipping {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.food {
+    font-size: 3vw;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0 5%;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+@media (min-width: 800px) {
+    .food {
+        font-size: 24px;
+    }
+}
+
+.firework {
+    position: absolute;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    animation: explode 1.5s ease-out forwards;
+}
+
+@keyframes explode {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(0);
+        opacity: 0;
+    }
+}
+
+@media (min-width: 800px) {
+    .author {
+        font-size: 16px;
+    }
+}
+
+.firework-particle {
+    position: fixed;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 999;
+}
+
+.author {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    font-style: italic;
+    color: #666;
+    font-size: 2vw;
+}
+
+.last-food {
+    font-size: 0.8em;
+    color: #666;
+    margin: 0;
+    text-align: center;
+}
+
+.card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+/* 主标题容器 */
+.main-title-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+/* 建议文本样式 */
+.suggestion {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+    color: #666;
+}
+
+/* 主标题 */
+.main-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+/* 建议文本 */
+.suggestion {
+    position: absolute;
+    top: calc(50% + 40px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    margin: 0;
+}
+ 

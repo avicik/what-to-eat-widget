@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今天吃什么？</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/food.css">
+</head>
+<body>
+    <div class="card-container">
+        <div class="card" id="foodCard">
+            <div class="card-front">
+                <div class="main-title-container">
+                    <p class="food">今天吃什么？</p>
+                </div>
+                <p class="suggestion" id="lastFood"></p>
+            </div>
+            <div class="card-back">
+                <p class="food" id="foodText"></p>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./js/foods.js"></script>
+    <script type="module" src="./js/script.js"></script>
+</body>
+</html>
